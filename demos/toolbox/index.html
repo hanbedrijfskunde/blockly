@@ -353,7 +353,7 @@
          toolbox: document.getElementById('toolbox')});
     function myUpdateFunction(event) {
         var code = Blockly.JavaScript.workspaceToCode(workspace);
-        document.getElementById('textarea').value = code;
+        document.getElementById('textarea').innerHTML = code;
     }
 workspace.addChangeListener(myUpdateFunction);
   </script>
