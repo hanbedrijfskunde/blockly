@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Blockly Demo: Toolbox</title>
   <script src="../../blockly_compressed.js"></script>
+  <script src="../../javascript_compressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
   <script src="../../msg/js/en.js"></script>
   <style>
@@ -342,11 +343,19 @@
       </category>
     </category>
   </xml>
+  <div id="textarea>
+  
+  </div>
 
   <script>
     var demoWorkspace = Blockly.inject('blocklyDiv',
         {media: '../../media/',
          toolbox: document.getElementById('toolbox')});
+    function myUpdateFunction(event) {
+        var code = Blockly.JavaScript.workspaceToCode(workspace);
+        document.getElementById('textarea').value = code;
+    }
+workspace.addChangeListener(myUpdateFunction);
   </script>
 
 </body>
